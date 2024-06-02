@@ -1,0 +1,70 @@
+# DamagerENW [github.com/damagerENW]
+# Configuration file.
+
+global-settings:
+  show-only-player-displays: false # Show displays only if it was dealt to a player
+
+  # Specifies the spawn location for the damage text.
+  # Available options: [ head, eye, body ]
+  text-location: eye
+
+  # animations settings
+  animations:
+    increase:
+      enabled: true
+      delay: 3
+    decrease:
+      enabled: true
+      delay: 4
+    upward:
+      enabled: true
+      speed: 0.03
+      max-height: -1 # Maximum height for the display to stop upward animation. -1 to disable
+
+
+  # Display settings
+  display:
+    scale: 0.6                     # Scale of the display
+    show-through-walls: false      # Whether the display is visible through walls
+    shadowed: true                 # Whether the display has a shadow
+    opacity: 255                   # Opacity of the display (0-255)
+    duration: 30                   # Duration the display will last in second
+
+
+# Damage display settings
+damage-display:
+
+  # Do not display damage if dealt by these projectiles
+  # Leave empty to disable
+  projectile-damage-ignore:
+    - EGG
+    - SNOWBALL
+    - ENDER_PEARL
+
+
+  # Do not display damage if the damage dealt is <= 0
+  ignore-zero-damage: false
+
+
+  # Supports MiniMessage docs.advntr.dev/minimessage/format.html
+  # %damage% - amount of damage dealt
+  # %health% - remaining health of the entity
+  damage-text: '<red>-%damage% ❤'
+
+
+# Kill display settings
+kill-display:
+  enabled: false
+  type: sequential # Available types: [ random, sequential ]
+
+  # [sequential]:
+  # Reset the sequence if no kill happens within this time in millisecond
+  sequential-reset: 30000
+
+  # %victim% - name of the entity killed
+  messages:
+     - <color:#FF0000>pwned %victim%
+     - <aqua><bold> Double kill
+     - <gradient:#e80005:#220001>GODLIKE</gradient>
+
+  show-damage-on-kill: false # show damage display when the entity is killed
