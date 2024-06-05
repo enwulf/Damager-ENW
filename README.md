@@ -13,6 +13,8 @@
 
 ## Permissions
 - `damagerenw.see` - Allows players to see damage displays and kill messages.
+
+admin:
 - `damagerenw.use` - Allows players to use the plugin commands.
 - `damagerenw.reload` - Allows players to reload the plugin configuration.
 
