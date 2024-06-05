@@ -7,6 +7,7 @@ import org.bukkit.entity.Projectile
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByEntityEvent
+import org.bukkit.event.entity.EntityDamageEvent.DamageModifier
 import ru.enwulf.damagerenw.config.Config
 import ru.enwulf.damagerenw.display.DamageDisplay
 import ru.enwulf.damagerenw.trackers.KillTracker
@@ -26,18 +27,31 @@ class DamageListener : Listener {
 
         val damager = damager
         if (damager is Projectile && Config.PROJECTILE_DAMAGE_IGNORE.contains(damager.type.name)) return
-
-        val damage = String.format(Locale.US, "%.1f", finalDamage)
         val displayLocation = getImpactLocation(damager.location, damagedEntity)
+
+        val calculatedDamage = calculateDamage(this)
 
         when (damager) {
             is Projectile -> (damager.shooter as? Player)?.let {
-                handlePlayerDamage(this, it, damagedEntity, displayLocation, damage)
+                handlePlayerDamage(this, it, damagedEntity, displayLocation, calculatedDamage)
             }
 
-            is Player -> handlePlayerDamage(this, damager, damagedEntity, displayLocation, damage)
+            is Player -> handlePlayerDamage(this, damager, damagedEntity, displayLocation, calculatedDamage)
         }
     }
+
+
+
+    private fun calculateDamage(event: EntityDamageByEntityEvent): String {
+        var dmg = 0.0
+        for (modifier in DamageModifier.entries) {
+            if (modifier != DamageModifier.ABSORPTION) {
+                dmg += event.getDamage(modifier)
+            }
+        }
+        return String.format(Locale.US, "%.1f", dmg)
+    }
+
 
 
     private fun getImpactLocation(damagerLocation: Location, damagedEntity: LivingEntity): Location {
