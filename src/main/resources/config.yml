@@ -56,7 +56,7 @@ kill-display:
 
   # [sequential]:
   # Reset the sequence if no kill happens within this time in millisecond
-  sequential-reset: 30000
+  sequential-reset: 25000
 
   # %victim% - name of the entity killed
   messages:

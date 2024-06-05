@@ -65,8 +65,7 @@ tasks {
 
 
 
-/*
-tasks.register<Copy>("moveToPluginsDir") {
+/*tasks.register<Copy>("moveToPluginsDir") {
     from(tasks.shadowJar.get().archiveFile.get().asFile)
     //from("C:/Users/raizz/Desktop/DamagerENW/build/libs/DamagerENW-1.0.jar")
 
@@ -77,5 +76,6 @@ tasks.register<Copy>("moveToPluginsDir") {
     into(pluginsDir)
 }
 
+
 tasks.named("build") { finalizedBy("moveToPluginsDir") }
-*/
+/*
