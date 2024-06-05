@@ -1,6 +1,3 @@
-# Damager-ENW [https://github.com/enwulf/Damager-ENW/]
-# Configuration file.
-
 global-settings:
   show-only-player-displays: false # Show displays only if it was dealt to a player
 
