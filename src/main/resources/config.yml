@@ -25,7 +25,7 @@ global-settings:
     show-through-walls: false      # Whether the display is visible through walls
     shadowed: true                 # Whether the display has a shadow
     opacity: 255                   # Opacity of the display (0-255)
-    duration: 30                   # Duration the display will last in second
+    duration: 15                   # Duration the display will last in second
 
 
 # Damage display settings
