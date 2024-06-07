@@ -2,6 +2,8 @@
 
 **Damager ENW** is a Minecraft plugin that enhances the damage and kill displays with customizable animations and messages.
 
+![gif](showcase.gif)
+
 ## Features
 
 - **Damage Display:** Shows damage dealt to entities with customizable text and animations.
