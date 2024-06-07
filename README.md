@@ -25,3 +25,4 @@ admin:
 You can download the plugin from:
 - [GitHub releases](https://github.com/enwulf/Damager-ENW/releases)
 - [Modrinth](https://modrinth.com/plugin/damager-enw)
+- [SpigotMC](https://www.spigotmc.org/resources/damager-enw.117162/)
