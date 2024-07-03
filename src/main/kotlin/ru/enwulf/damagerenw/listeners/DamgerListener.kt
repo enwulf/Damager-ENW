@@ -21,7 +21,7 @@ class DamageListener : Listener {
     @EventHandler
     fun EntityDamageByEntityEvent.handle() {
         val damagedEntity = entity as? LivingEntity ?: return
-        if (damagedEntity.hasMetadata("NPC")) return
+
         if (Config.SHOW_ONLY_PLAYER_DAMAGE && damagedEntity !is Player) return
         if (Config.IGNORE_ZERO_DAMAGE && finalDamage <= 0) return
 
