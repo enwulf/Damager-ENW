@@ -20,7 +20,7 @@ object DamageDisplay  {
 
     fun show(viewer: Player, location: Location, message: String, replacements: Map<String, String>? = null) {
         val textDisplay = create(
-            location.clone().add(Config.DAMAGE_TEXT_LOCATION_OFFSET_X, Config.DAMAGE_TEXT_LOCATION_OFFSET_Y, Config.DAMAGE_TEXT_LOCATION_OFFSET_Z),
+            location.add(Config.DAMAGE_TEXT_LOCATION_OFFSET_X, Config.DAMAGE_TEXT_LOCATION_OFFSET_Y, Config.DAMAGE_TEXT_LOCATION_OFFSET_Z),
             message,
             replacements
         )
