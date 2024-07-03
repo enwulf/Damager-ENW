@@ -11,6 +11,9 @@ object Config {
     private const val GLOBAL_SETTINGS = "global-settings"
     val SHOW_ONLY_PLAYER_DAMAGE: Boolean get() = config.getBoolean("$GLOBAL_SETTINGS.show-only-player-damage")
     val DAMAGE_TEXT_LOCATION: String? get() = config.getString("$GLOBAL_SETTINGS.text-location")
+    val DAMAGE_TEXT_LOCATION_OFFSET_X: Double get() = config.getDouble("$GLOBAL_SETTINGS.text-location-offset.x")
+    val DAMAGE_TEXT_LOCATION_OFFSET_Y: Double get() = config.getDouble("$GLOBAL_SETTINGS.text-location-offset.y")
+    val DAMAGE_TEXT_LOCATION_OFFSET_Z: Double get() = config.getDouble("$GLOBAL_SETTINGS.text-location-offset.z")
     val DISPLAY_SHOW_THROUGH_WALLS: Boolean get() = config.getBoolean("$GLOBAL_SETTINGS.display.show-through-walls")
     val DISPLAY_SCALE: Double get() = config.getDouble("$GLOBAL_SETTINGS.display.scale")
     val DISPLAY_SHADOWED: Boolean get() = config.getBoolean("$GLOBAL_SETTINGS.display.shadowed")

@@ -5,6 +5,12 @@ global-settings:
   # Available options: [ head, eye, body ]
   text-location: eye
 
+  # Specifies the offset which is applied to the spawn location.
+  text-location-offset:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+
   # animations settings
   animations:
     increase:
