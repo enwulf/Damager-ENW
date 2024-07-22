@@ -18,7 +18,7 @@ class DamageListener : Listener {
 
     private val killTracker = KillTracker()
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     fun EntityDamageByEntityEvent.handle() {
         val damagedEntity = entity as? LivingEntity ?: return
 
