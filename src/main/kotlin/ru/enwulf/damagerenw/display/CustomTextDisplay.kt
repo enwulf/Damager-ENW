@@ -40,6 +40,7 @@ object DamageDisplay  {
 
     private fun configure(textDisplay: TextDisplay) {
         with(textDisplay) {
+            isPersistent = false
             isVisibleByDefault = false
             scale(if (Config.ANIMATIONS_INCREASE_ENABLED) 0.1 else Config.DISPLAY_SCALE)
             isSeeThrough = Config.DISPLAY_SHOW_THROUGH_WALLS
