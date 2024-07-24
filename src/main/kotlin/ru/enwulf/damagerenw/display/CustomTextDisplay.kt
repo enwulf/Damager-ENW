@@ -19,7 +19,11 @@ import ru.enwulf.damagerenw.config.Config
 object DamageDisplay  {
 
     fun show(viewer: Player, location: Location, message: String, replacements: Map<String, String>? = null) {
-        val textDisplay = create(location, message, replacements)
+        val textDisplay = create(
+            location.add(Config.DAMAGE_TEXT_LOCATION_OFFSET_X, Config.DAMAGE_TEXT_LOCATION_OFFSET_Y, Config.DAMAGE_TEXT_LOCATION_OFFSET_Z),
+            message,
+            replacements
+        )
 
         configure(textDisplay)
 
